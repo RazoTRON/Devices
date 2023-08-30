@@ -7,6 +7,7 @@ import com.test.ezlo.domain.model.User
 import com.test.ezlo.domain.usecase.GetDeviceByPkUseCase
 import com.test.ezlo.domain.usecase.GetUserUseCase
 import com.test.ezlo.domain.usecase.SaveDeviceUseCase
+import com.test.ezlo.feature.details.common.DetailsScreenMode
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject

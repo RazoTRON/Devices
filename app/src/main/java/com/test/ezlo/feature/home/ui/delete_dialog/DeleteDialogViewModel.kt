@@ -1,4 +1,4 @@
-package com.test.ezlo.feature.home.ui
+package com.test.ezlo.feature.home.ui.delete_dialog
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

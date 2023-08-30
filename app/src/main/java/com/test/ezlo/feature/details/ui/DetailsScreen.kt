@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.test.ezlo.R
 import com.test.ezlo.core_ui.composable.UserProfileBlock
+import com.test.ezlo.feature.details.common.DetailsScreenMode
 
 private const val DEVICE_PHOTO_SIZE = 80
 private const val IMAGE_CORNER_SHAPE = 15

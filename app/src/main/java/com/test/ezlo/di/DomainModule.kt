@@ -15,65 +15,8 @@ import dagger.Provides
 
 @Module
 class DomainModule {
-
     @Provides
     fun provideDispatchers(): AppCoroutineDispatcher {
         return AppCoroutineDispatcher()
-    }
-
-    @Provides
-    fun provideGetDevicesUseCase(
-        repository: DeviceRepository,
-        dispatcher: AppCoroutineDispatcher,
-    ): GetDevicesUseCase {
-        return GetDevicesUseCase(repository, dispatcher)
-    }
-
-    @Provides
-    fun provideGetUserUseCase(
-        repository: UserRepository,
-        dispatcher: AppCoroutineDispatcher,
-    ): GetUserUseCase {
-        return GetUserUseCase(repository, dispatcher)
-    }
-
-    @Provides
-    fun provideLoadDevicesUseCase(
-        repository: DeviceRepository,
-        dispatcher: AppCoroutineDispatcher,
-    ): LoadDevicesUseCase {
-        return LoadDevicesUseCase(repository, dispatcher)
-    }
-
-    @Provides
-    fun provideUpdateDeviceUseCase(
-        repository: DeviceRepository,
-        dispatcher: AppCoroutineDispatcher,
-    ): UpdateDeviceUseCase {
-        return UpdateDeviceUseCase(repository, dispatcher)
-    }
-
-    @Provides
-    fun provideGetDeviceByPkUseCase(
-        repository: DeviceRepository,
-        dispatcher: AppCoroutineDispatcher,
-    ): GetDeviceByPkUseCase {
-        return GetDeviceByPkUseCase(repository, dispatcher)
-    }
-
-    @Provides
-    fun provideSaveDeviceUseCase(
-        repository: DeviceRepository,
-        dispatcher: AppCoroutineDispatcher,
-    ): SaveDeviceUseCase {
-        return SaveDeviceUseCase(repository, dispatcher)
-    }
-
-    @Provides
-    fun provideDeleteDeviceUseCase(
-        repository: DeviceRepository,
-        dispatcher: AppCoroutineDispatcher,
-    ): DeleteDeviceUseCase {
-        return DeleteDeviceUseCase(repository, dispatcher)
     }
 }

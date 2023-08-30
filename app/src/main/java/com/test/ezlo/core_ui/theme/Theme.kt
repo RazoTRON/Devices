@@ -1,4 +1,4 @@
-package com.test.ezlo.ui.theme
+package com.test.ezlo.core_ui.theme
 
 import android.app.Activity
 import android.os.Build

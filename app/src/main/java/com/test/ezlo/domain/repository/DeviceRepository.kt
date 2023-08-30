@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface DeviceRepository {
     suspend fun load()
-    fun delete(device: Device)
+    fun delete(pkDevice: Int)
     fun getFlow(): Flow<List<Device>>
     fun getByPk(pKDevice: Int): Device?
     fun clear()

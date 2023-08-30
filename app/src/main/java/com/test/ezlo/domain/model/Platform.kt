@@ -1,9 +1,9 @@
 package com.test.ezlo.domain.model
 
-import androidx.annotation.StringRes
+import androidx.annotation.DrawableRes
 import com.test.ezlo.R
 
-enum class Platform(val key: String, @StringRes val image: Int) {
+enum class Platform(val key: String, @DrawableRes val image: Int) {
     G450("Sercomm G450", R.drawable.vera_plus_big),
     G550("Sercomm G550", R.drawable.vera_secure_big),
     VeraLite("MiCasaVerde VeraLite", R.drawable.vera_edge_big),

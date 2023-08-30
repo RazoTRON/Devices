@@ -20,6 +20,5 @@ internal fun AppNavGraph(
         modifier = modifier
     ) {
         di.homeFeatureApi.register(this, navController)
-        di.detailsFeatureApi.register(this, navController)
     }
 }

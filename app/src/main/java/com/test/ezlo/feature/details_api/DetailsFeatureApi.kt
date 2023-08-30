@@ -5,5 +5,6 @@ import androidx.navigation.NavGraphBuilder
 
 interface DetailsFeatureApi {
     fun register(navGraphBuilder: NavGraphBuilder, navController: NavController)
-    val mainRoute: String
+    fun detailsRoute(pkDevice: Int): String
+    fun editRoute(pkDevice: Int): String
 }

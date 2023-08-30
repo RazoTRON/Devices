@@ -16,8 +16,8 @@ interface DeviceDao {
     @Insert(entity = DeviceEntity::class, onConflict = OnConflictStrategy.REPLACE)
     fun insert(vararg devices: DeviceParam)
 
-    @Delete(entity = DeviceEntity::class)
-    fun delete(param: DeviceEntity)
+    @Query("DELETE FROM ${DeviceEntity.TABLE_NAME} WHERE ${DeviceEntity.PK_DEVICE} = :pkDevice")
+    fun delete(pkDevice: Int)
 
     @Query("DELETE FROM ${DeviceEntity.TABLE_NAME}")
     fun clear()

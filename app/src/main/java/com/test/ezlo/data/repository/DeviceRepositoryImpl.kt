@@ -45,8 +45,8 @@ class DeviceRepositoryImpl(
         deviceDao.update(device.copy(title = updateDeviceParam.title))
     }
 
-    override fun delete(device: Device) {
-        deviceDao.delete(device.toEntity())
+    override fun delete(pkDevice: Int) {
+        deviceDao.delete(pkDevice)
     }
 
     override fun clear() {

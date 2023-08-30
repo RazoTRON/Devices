@@ -3,7 +3,9 @@ package com.test.ezlo.feature.home.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.test.ezlo.domain.model.User
+import com.test.ezlo.domain.usecase.DeleteDeviceUseCase
 import com.test.ezlo.domain.usecase.GetDevicesUseCase
+import com.test.ezlo.domain.usecase.GetUserUseCase
 import com.test.ezlo.domain.usecase.LoadDevicesUseCase
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
@@ -18,24 +20,34 @@ data class HomeScreenState(
 
 class HomeViewModel @AssistedInject constructor(
     private val getDevicesUseCase: GetDevicesUseCase,
-    private val loadDevicesUseCase: LoadDevicesUseCase
+    private val loadDevicesUseCase: LoadDevicesUseCase,
+    private val getUserUseCase: GetUserUseCase,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(HomeScreenState())
     val state = _state.asStateFlow()
 
     init {
-        load()
-        fetch()
+        loadUser()
+        loadDevices()
+        fetchDevices()
     }
 
-    fun load() {
+    fun loadDevices() {
         viewModelScope.launch {
             loadDevicesUseCase.execute()
         }
     }
 
-    private fun fetch() {
+    private fun loadUser() {
+        viewModelScope.launch {
+            val result = getUserUseCase.execute()
+
+            _state.emit(state.value.copy(user = result))
+        }
+    }
+
+    private fun fetchDevices() {
         viewModelScope.launch {
             getDevicesUseCase.execute().collect { _list ->
                 val list = _list.map { device -> device.toUiModel() }

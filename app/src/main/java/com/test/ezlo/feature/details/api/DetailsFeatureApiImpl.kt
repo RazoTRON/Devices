@@ -10,7 +10,7 @@ import com.test.ezlo.feature.details.di.DaggerDetailsComponent
 import com.test.ezlo.feature.details.ui.DetailsScreen
 import com.test.ezlo.feature.details_api.DetailsFeatureApi
 import com.test.ezlo.feature.details.di.DetailsDiProvider
-import com.test.ezlo.feature.details.ui.DetailsScreenMode
+import com.test.ezlo.feature.details.common.DetailsScreenMode
 
 class DetailsFeatureApiImpl : DetailsFeatureApi {
 

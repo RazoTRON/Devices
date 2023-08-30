@@ -1,4 +1,4 @@
-package com.test.ezlo.feature.home.ui
+package com.test.ezlo.feature.home.ui.delete_dialog
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

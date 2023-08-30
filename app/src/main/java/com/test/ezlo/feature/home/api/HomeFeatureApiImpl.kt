@@ -10,7 +10,7 @@ import androidx.navigation.navigation
 import com.test.ezlo.core_ui.util.injectViewModel
 import com.test.ezlo.feature.home.di.DaggerHomeComponent
 import com.test.ezlo.feature.home.di.HomeDiProvider
-import com.test.ezlo.feature.home.ui.DeleteDialogContent
+import com.test.ezlo.feature.home.ui.delete_dialog.DeleteDialogContent
 import com.test.ezlo.feature.home.ui.HomeScreen
 import com.test.ezlo.feature.home_api.HomeFeatureApi
 
@@ -19,6 +19,7 @@ class HomeFeatureApiImpl : HomeFeatureApi {
     override val mainRoute = "home_graph"
     private val homeRoute = "home"
     private val deleteRoute = "delete"
+
     private val pkDeviceKey = "pkDevice_key"
     private fun deleteDialogRoute(pkDevice: Int) = "$deleteRoute/${pkDevice}"
 

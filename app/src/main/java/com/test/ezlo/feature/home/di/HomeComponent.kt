@@ -2,7 +2,7 @@ package com.test.ezlo.feature.home.di
 
 import com.test.ezlo.feature.details.di.DetailsScope
 import com.test.ezlo.feature.details_api.DetailsFeatureApi
-import com.test.ezlo.feature.home.ui.DeleteDialogViewModel
+import com.test.ezlo.feature.home.ui.delete_dialog.DeleteDialogViewModel
 import com.test.ezlo.feature.home.ui.HomeViewModel
 import dagger.Component
 

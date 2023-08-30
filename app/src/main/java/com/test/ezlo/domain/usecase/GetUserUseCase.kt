@@ -10,6 +10,8 @@ class GetUserUseCase(
     private val dispatcher: AppCoroutineDispatcher,
 ) {
     suspend fun execute(): User {
-        return withContext(dispatcher.IO) { repository.get() }
+        return withContext(dispatcher.IO) {
+            repository.get()
+        }
     }
 }

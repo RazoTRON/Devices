@@ -2,6 +2,7 @@ package com.test.ezlo.feature.home.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.test.ezlo.domain.common.AppResult
 import com.test.ezlo.domain.model.User
 import com.test.ezlo.domain.usecase.DeleteDeviceUseCase
 import com.test.ezlo.domain.usecase.GetDevicesUseCase
@@ -35,7 +36,12 @@ class HomeViewModel @AssistedInject constructor(
 
     fun loadDevices() {
         viewModelScope.launch {
-            loadDevicesUseCase.execute()
+            val result = loadDevicesUseCase.execute()
+
+            when (result) {
+                is AppResult.Success -> { /* DO NOTHING */ }
+                is AppResult.Error -> { /* SHOW ERROR MESSAGE */ }
+            }
         }
     }
 

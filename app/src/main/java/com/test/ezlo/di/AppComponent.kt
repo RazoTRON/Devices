@@ -1,6 +1,7 @@
 package com.test.ezlo.di
 
 import android.content.Context
+import com.test.ezlo.domain.common.AppCoroutineDispatcher
 import com.test.ezlo.domain.repository.DeviceRepository
 import com.test.ezlo.domain.repository.UserRepository
 import com.test.ezlo.domain.usecase.DeleteDeviceUseCase
@@ -32,13 +33,8 @@ internal interface AppComponent : HomeDependencies, DetailsDependencies {
     val homeFeatureApi: HomeFeatureApi
     override val detailsFeatureApi: DetailsFeatureApi
 
-    val deviceRepository: DeviceRepository
-    val userRepository: UserRepository
+    override val deviceRepository: DeviceRepository
+    override val userRepository: UserRepository
 
-    override val getDevicesUseCase: GetDevicesUseCase
-    override val loadDevicesUseCase: LoadDevicesUseCase
-    override val getUserUseCase: GetUserUseCase
-    override val getDeviceByPkUseCase: GetDeviceByPkUseCase
-    override val saveDeviceUseCase: SaveDeviceUseCase
-    override val deleteDeviceUseCase: DeleteDeviceUseCase
+    override val appCoroutineDispatcher: AppCoroutineDispatcher
 }

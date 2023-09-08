@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">eZLO</string>
+    <string name="app_name">Company</string>
     <string name="save">SAVE</string>
     <string name="delete_device_text">Do you want do delete this device?</string>
     <string name="delete">Delete</string>

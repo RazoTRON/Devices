@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.test.ezlo'
+    namespace 'com.test.company'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.test.ezlo"
+        applicationId "com.test.company"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -17,10 +17,17 @@ android {
     }
 
     buildTypes {
-        release {
-            buildConfigField("String", "BASE_URL", "\"https://veramobile.mios.com\"")
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://mocki.io\"")
 
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            buildConfigField("String", "BASE_URL", "\"https://mocki.io\"")
+
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -78,6 +85,9 @@ dependencies {
     implementation "androidx.room:room-ktx:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
+
+    // DataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
 
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
